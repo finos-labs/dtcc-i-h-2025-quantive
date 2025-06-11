@@ -29,8 +29,6 @@ The core of the system works with a knowledge base composed of credible, reliabl
 
 This helps our platform always stay updated with the most recent information.
 
----
-
 ## Technical Stuff
 
 ### Getting Information from the Web
@@ -65,15 +63,11 @@ Amazon Kendra acts as our main search engine. On a periodic basis, Amazon Kendra
 
 The chatbot part of the application utilizes `taxLLMRAGFunction` as the interface to this application. This Lambda is responsible for accepting user queries, fetching relevant context snippets from Kendra, and then querying the Bedrock LLM model to generate reliable answers back to the users.
 
----
-
 ## Security Features
 
 1. In AWS Bedrock, guardrails are used to redact any PII from both the user query as well as the LLM response.
 2. An on-prem server-hosted ML NRE model, which will also redact PII from the user query can be used. The reasoning behind this approach is to have the benefit of making user query anonymous even before it leaves the company network, making it more secure.  
    To simulate this, the set up is done on an EC2 server powered by the open-source model – `iiiorg/piiranha-v1-detect-personal-information`.
-
----
 
 ## Software Features
 
