@@ -18,7 +18,7 @@ Commit Early & Commit Often!!!
 
 Tax Event Detection & Categorization
 
-### Project Details
+## Project Details
 
 Our solution is a AI-driven platform that users can rely on for their tax-related issues. The platform has two major components – a chat system where users can ask questions about financial matters to get reliable answers with citations, and an alerting system where users can subscribe to financial-tax topics relevant to them.
 
@@ -29,17 +29,17 @@ The core of the system works with a knowledge base composed of credible, reliabl
 
 This helps our platform always stay updated with the most recent information.
 
-## Technical Stuff
+### Technical Stuff
 
-### Getting Information from the Web
+#### Getting Information from the Web
 
 The combination of web scraping, RSS feeds, and publicly available APIs is used to fetch data. These scrapers and fetchers are in the form of Lambda functions `taxLLMScraperFunction` and `incometaxGovScraper` that get triggered periodically, storing the information in an S3 bucket.
 
-### Metadata Tagging
+#### Metadata Tagging
 
 The documents stored in the S3 bucket are run through the Named Entity Recognition service provided by AWS Comprehend to identify the relevant entities referenced in a document. This information is made part of the metadata to ensure better knowledge retrieval and prioritization.
 
-### Classification & Alerts
+#### Classification & Alerts
 
 Whenever a document is added to S3, it triggers a Lambda function `classifyTaxArticle` that uses an LLM model to categorize the new information into one of many pre-determined categories mentioned below. 
 
@@ -55,34 +55,34 @@ Whenever a document is added to S3, it triggers a Lambda function `classifyTaxAr
 
 This classification is stored in DynamoDB `ArticlesClassification` for later access, which in turn triggers another Lambda function `sendEmailNotifications` to send out emails to subscribed users.
 
-### Document Search Engine
+#### Document Search Engine
 
 Amazon Kendra acts as our main search engine. On a periodic basis, Amazon Kendra goes through the S3 buckets containing the curated documents and their metadata, indexing the information for easy retrieval. Kendra, in addition, crawls through a number of relevant websites, adding more information to the knowledge base system.
 
-### Chatbot Interface
+#### Chatbot Interface
 
 The chatbot part of the application utilizes `taxLLMRAGFunction` as the interface to this application. This Lambda is responsible for accepting user queries, fetching relevant context snippets from Kendra, and then querying the Bedrock LLM model to generate reliable answers back to the users.
 
-## Security Features
+### Security Features
 
 1. In AWS Bedrock, guardrails are used to redact any PII from both the user query as well as the LLM response.
 2. An on-prem server-hosted ML NRE model, which will also redact PII from the user query can be used. The reasoning behind this approach is to have the benefit of making user query anonymous even before it leaves the company network, making it more secure.  
    To simulate this, the set up is done on an EC2 server powered by the open-source model – `iiiorg/piiranha-v1-detect-personal-information`.
 
-## Software Features
+### Software Features
 
 - User authentication system  
 - Chat history  
 - News feed of subscribed topics  
 - Alerting system based on categorized tax updates
 
-## Future Enhancements
+### Future Enhancements
 
 - Convert any numerical figure in the prompt into a range to support redaction or normalization.
 - Integrate a quantitative data source and processing engine to support mathematical and tax-related calculations.
 - Monitor for any suspicious or illegal activities and flag the user.
 
-### Team Information
+## Team Information
 
 Nanda Kumar 
 Sidharth Anil
