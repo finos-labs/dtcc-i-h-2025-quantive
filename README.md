@@ -88,7 +88,7 @@ The chatbot part of the application utilizes `taxLLMRAGFunction` as the interfac
 
 - Convert any numerical figure in the prompt into a range to support redaction or normalization.
 - Integrate a quantitative data source and processing engine to support mathematical and tax-related calculations.
-
+- Monitor for any suspicious or illegal activities and flag the user.
 
 ### Team Information
 
