@@ -1,0 +1,11 @@
+feedparser
+requests
+trafilatura
+python-dotenv
+lxml
+lxml_html_clean
+boto3
+python-dateutil
+googlenewsdecoder
+newspaper3k
+beautifulsoup4
