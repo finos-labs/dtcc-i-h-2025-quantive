@@ -20,8 +20,6 @@ Tax Event Detection & Categorization
 
 ### Project Details
 
-# AI-Driven Tax Intelligence Platform
-
 Our solution is a AI-driven platform that users can rely on for their tax-related issues. The platform has two major components – a chat system where users can ask questions about financial matters to get reliable answers with citations, and an alerting system where users can subscribe to financial-tax topics relevant to them.
 
 The core of the system works with a knowledge base composed of credible, reliable sources such as officially released government circulars and top news providers. New information is periodically fetched/scraped from pre-decided online sources, which then:
