@@ -84,10 +84,10 @@ The chatbot part of the application utilizes `taxLLMRAGFunction` as the interfac
 
 ## Team Information
 
-Nanda Kumar 
-Sidharth Anil
-Anagha M
-Kavya Gonuguntla
+- Nanda Kumar 
+- Sidharth Anil
+- Anagha M
+- Kavya Gonuguntla
 
 ## Using DCO to sign your commits
 
