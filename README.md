@@ -19,6 +19,7 @@ Commit Early & Commit Often!!!
 Tax Event Detection & Categorization
 
 ## Project Details
+The project is accessible for the moment at the url http://34.219.206.185:8501/
 
 Our solution is a AI-driven platform that users can rely on for their tax-related issues. The platform has two major components – a chat system where users can ask questions about financial matters to get reliable answers with citations, and an alerting system where users can subscribe to financial-tax topics relevant to them.
 
